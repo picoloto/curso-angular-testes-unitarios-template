@@ -12,6 +12,7 @@ describe('FixProblemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatDialogModule, ReactiveFormsModule, FormsModule],
       declarations: [ FixProblemsComponent ],
     })
     .compileComponents();
