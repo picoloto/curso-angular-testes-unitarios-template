@@ -65,6 +65,25 @@ describe('MatchersJasmineComponent', () => {
     // expect('true').toContain('se') -> O toContain verifica se contain o dado informado. Funciona com string, array...
   })
 
+  it('Deve testar o uso do matcher toBeDefined', () => {
+    let teste = 'abc';
+    expect(teste).toBeDefined();
+    // let teste;
+    // expect(teste).toBeDefined() -> Verifica se a variavel é != undefined
+  })
+
+  it('Deve testar o uso do matcher toBeUndefined', () => {
+    let teste;
+    expect(teste).toBeUndefined();
+    // let teste = 'abc';
+    // expect(teste).toBeUndefined() -> Verifica se a variavel é == undefined
+  })
+
+  it('Deve testar o uso do matcher toBeNull', () => {
+    expect(null).toBeNull();
+    expect('abc').not.toBeNull();
+    // expect('abc').toBeNull() -> Verifica se é null
+  })
 
 
 });
