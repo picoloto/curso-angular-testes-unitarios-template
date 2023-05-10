@@ -54,4 +54,21 @@ describe('HttpService', () => {
     expect(request.request.method).toBe('GET');
     expect(request.request.url).toBe(usersUrl);
   });
+
+  it('Deve gerar erro ao obter usuários', () => {
+    service.getUsers().subscribe({
+      error: (e) => {
+        expect(e.status).toBe(500);
+      },
+    });
+
+    const request = httpTestingController.expectOne(usersUrl);
+    request.flush(null, {
+      status: 500,
+      statusText: 'Erro de rede',
+    });
+
+    expect(request.request.method).toBe('GET');
+    expect(request.request.url).toBe(usersUrl);
+  });
 });
