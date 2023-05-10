@@ -110,6 +110,16 @@ describe('MatchersJasmineComponent', () => {
     // expect('false').toMatch(/o/) -> verifica se contain o dado informado, mas considera uma expressão regular
   })
 
+  it('Deve testar o uso do matcher toThrow', () => {
+    expect(function () {
+      throw new Error('Erro')
+    }).toThrow();
+
+    // expect(function () {
+      // return 'Sucesso';
+    // }).toThrow() -> verifica se disparou algum erro
+  })
+
 });
 
 
