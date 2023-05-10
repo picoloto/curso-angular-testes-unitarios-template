@@ -21,6 +21,12 @@ describe('MatchersJasmineComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('Deve testar o uso do matcher toEqual', () => {
+    expect(true).toEqual(true);
+    expect([1,2]).toEqual([1,2])
+    // expect([1,2]).toEqual([1,2,3]) -> O teste considera não apenas length, mas também conteúdo
+  })
+
 });
 
 
