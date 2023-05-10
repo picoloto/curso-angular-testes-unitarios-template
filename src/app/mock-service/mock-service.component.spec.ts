@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MockServiceComponent } from './mock-service.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('MockServiceComponent', () => {
   let component: MockServiceComponent;
@@ -8,9 +9,9 @@ describe('MockServiceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MockServiceComponent ],
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [MockServiceComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MockServiceComponent);
     component = fixture.componentInstance;
