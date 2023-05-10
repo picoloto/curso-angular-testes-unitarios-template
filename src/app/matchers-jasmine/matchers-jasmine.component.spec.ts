@@ -100,6 +100,12 @@ describe('MatchersJasmineComponent', () => {
     // expect(11).toBeLessThan(10) -> Verifica se é menor que o expect
   })
 
+  it('Deve testar o uso do matcher toBeCloseTo', () => {
+    expect(10.2).toBeCloseTo(10.22, 1);
+    // expect(10.2).toBeCloseTo(10.3, 1) -> Verifica se o valor é proximo do expect, considerando a precision
+  })
+
+
 });
 
 
