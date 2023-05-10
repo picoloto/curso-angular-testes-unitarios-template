@@ -117,7 +117,7 @@ describe('MatchersJasmineComponent', () => {
 
     // expect(function () {
       // return 'Sucesso';
-    // }).toThrow() -> verifica se disparou algum erro
+    // }).toThrow() -> verifica se disparou alguma exceção
   })
 
 });
