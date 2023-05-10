@@ -86,4 +86,21 @@ describe('HttpService', () => {
 
     request.flush(user);
   });
+
+  it('Deve fazer requisição PUT para editar usuário', () => {
+    const user = { name: 'Leandro' };
+    const id = 3;
+    const fullUrl = `${usersUrl}/${id}`;
+
+    service.putUser(id, user).subscribe((res) => {
+      expect(res).toBe(user);
+    });
+
+    const request = httpTestingController.expectOne(fullUrl);
+
+    expect(request.request.method).toBe('PUT');
+    expect(request.request.url).toBe(fullUrl);
+
+    request.flush(user);
+  });
 });
