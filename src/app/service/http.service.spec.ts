@@ -103,4 +103,20 @@ describe('HttpService', () => {
 
     request.flush(user);
   });
+
+  it('Deve fazer requisição DELETE para remover usuário', () => {
+    const id = 3;
+    const fullUrl = `${usersUrl}/${id}`;
+
+    service.deleteUser(id).subscribe((res) => {
+      expect(res).toBeNull();
+    });
+
+    const request = httpTestingController.expectOne(fullUrl);
+
+    expect(request.request.method).toBe('DELETE');
+    expect(request.request.url).toBe(fullUrl);
+
+    request.flush(null);
+  });
 });
