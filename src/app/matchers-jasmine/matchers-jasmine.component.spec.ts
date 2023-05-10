@@ -27,6 +27,13 @@ describe('MatchersJasmineComponent', () => {
     // expect([1,2]).toEqual([1,2,3]) -> O teste considera não apenas length, mas também conteúdo
   })
 
+  it('Deve testar o uso do matcher toBe', () => {
+    let names = ['Leandro', 'Carlos', 'Jose'];
+
+    expect(names).toBe(names);
+    // expect(names).toEqual(['Leandro', 'Carlos', 'Jose']) -> O teste considera o mesmo objeto, mesma referencia, etc
+  })
+
 });
 
 
