@@ -41,7 +41,17 @@ describe('MatchersJasmineComponent', () => {
 
   it('Deve testar o uso do matcher toBeFalsy', () => {
     expect(false).toBeFalsy();
-    // expect(1).toBeTruthy() -> O toBeFalsy considera a conversão do valor para testar o bool
+    // expect(1).toBeFalsy() -> O toBeFalsy considera a conversão do valor para testar o bool
+  })
+
+  it('Deve testar o uso do matcher toBeTrue', () => {
+    expect(true).toBeTrue();
+    // expect(false).toBeTrue() -> O toBeTrue considera o valor bool
+  })
+
+  it('Deve testar o uso do matcher toBeFalse', () => {
+    expect(false).toBeFalse();
+    // expect(true).toBeTrue() -> O toBeFalse considera o valor bool
   })
 
 });
