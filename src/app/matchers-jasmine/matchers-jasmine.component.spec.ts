@@ -24,34 +24,34 @@ describe('MatchersJasmineComponent', () => {
   it('Deve testar o uso do matcher toEqual', () => {
     expect(true).toEqual(true);
     expect([1,2]).toEqual([1,2])
-    // expect([1,2]).toEqual([1,2,3]) -> O toEqual considera não apenas length, mas também conteúdo
+    // expect([1,2]).toEqual([1,2,3]) -> verificar não apenas length, mas também conteúdo
   })
 
   it('Deve testar o uso do matcher toBe', () => {
     let names = ['Leandro', 'Carlos', 'Jose'];
 
     expect(names).toBe(names);
-    // expect(names).toEqual(['Leandro', 'Carlos', 'Jose']) -> O toBe considera o mesmo objeto, mesma referencia, etc
+    // expect(names).toEqual(['Leandro', 'Carlos', 'Jose']) -> considera o mesmo objeto, mesma referencia, etc
   })
 
   it('Deve testar o uso do matcher toBeTruthy', () => {
     expect(true).toBeTruthy();
-    // expect(0).toBeTruthy() -> O toBeTruthy considera a conversão do valor para testar o bool
+    // expect(0).toBeTruthy() -> considera a conversão do valor para testar o bool
   })
 
   it('Deve testar o uso do matcher toBeFalsy', () => {
     expect(false).toBeFalsy();
-    // expect(1).toBeFalsy() -> O toBeFalsy considera a conversão do valor para testar o bool
+    // expect(1).toBeFalsy() -> considera a conversão do valor para testar o bool
   })
 
   it('Deve testar o uso do matcher toBeTrue', () => {
     expect(true).toBeTrue();
-    // expect(false).toBeTrue() -> O toBeTrue considera o valor bool
+    // expect(false).toBeTrue() ->considera o valor bool
   })
 
   it('Deve testar o uso do matcher toBeFalse', () => {
     expect(false).toBeFalse();
-    // expect(true).toBeTrue() -> O toBeFalse considera o valor bool
+    // expect(true).toBeTrue() -> verifica o valor considerando bool
   })
 
   it('Deve testar o uso do matcher not', () => {
@@ -62,7 +62,7 @@ describe('MatchersJasmineComponent', () => {
   it('Deve testar o uso do matcher toContain', () => {
     expect('false').toContain('se');
     expect([1,2]).toContain(1);
-    // expect('true').toContain('se') -> O toContain verifica se contain o dado informado. Funciona com string, array...
+    // expect('true').toContain('se') -> verifica se contain o dado informado. Funciona com string, array...
   })
 
   it('Deve testar o uso do matcher toBeDefined', () => {
@@ -88,6 +88,11 @@ describe('MatchersJasmineComponent', () => {
   it('Deve testar o uso do matcher toBeNaN', () => {
     expect(NaN).toBeNaN();
     // expect('NaN').toBeNaN() -> Verifica se é NaN
+  })
+
+  it('Deve testar o uso do matcher toBeGreaterThan', () => {
+    expect(10).toBeGreaterThan(1);
+    // expect(11).toBeGreaterThan() -> Verifica se é maior que o expect
   })
 
 });
