@@ -105,6 +105,10 @@ describe('MatchersJasmineComponent', () => {
     // expect(10.2).toBeCloseTo(10.3, 1) -> Verifica se o valor é proximo do expect, considerando a precision
   })
 
+  it('Deve testar o uso do matcher toMatch', () => {
+    expect('false').toMatch(/a/);
+    // expect('false').toMatch(/o/) -> verifica se contain o dado informado, mas considera uma expressão regular
+  })
 
 });
 
