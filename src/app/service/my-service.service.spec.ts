@@ -50,8 +50,5 @@ describe('MyServiceMock', () => {
     service.getUsers().subscribe(res => {
       expect(res).toEqual(RESPONSE);
     })
-
   });
-
-
 });
