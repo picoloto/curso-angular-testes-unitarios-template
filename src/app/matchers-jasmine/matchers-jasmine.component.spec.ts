@@ -85,6 +85,10 @@ describe('MatchersJasmineComponent', () => {
     // expect('abc').toBeNull() -> Verifica se é null
   })
 
+  it('Deve testar o uso do matcher toBeNaN', () => {
+    expect(NaN).toBeNaN();
+    // expect('NaN').toBeNaN() -> Verifica se é NaN
+  })
 
 });
 
