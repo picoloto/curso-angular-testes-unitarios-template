@@ -92,7 +92,12 @@ describe('MatchersJasmineComponent', () => {
 
   it('Deve testar o uso do matcher toBeGreaterThan', () => {
     expect(10).toBeGreaterThan(1);
-    // expect(11).toBeGreaterThan() -> Verifica se é maior que o expect
+    // expect(10).toBeGreaterThan(11) -> Verifica se é maior que o expect
+  })
+
+  it('Deve testar o uso do matcher toBeLessThan', () => {
+    expect(10).toBeLessThan(11);
+    // expect(11).toBeLessThan(10) -> Verifica se é menor que o expect
   })
 
 });
