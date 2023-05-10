@@ -59,6 +59,13 @@ describe('MatchersJasmineComponent', () => {
     // expect(true).not.toBeTrue() -> O not é igual ao ! de uma comparação bool
   })
 
+  it('Deve testar o uso do matcher toContain', () => {
+    expect('false').toContain('se');
+    expect([1,2]).toContain(1);
+    // expect('true').toContain('se') -> O toContain verifica se contain o dado informado. Funciona com string, array...
+  })
+
+
 
 });
 
