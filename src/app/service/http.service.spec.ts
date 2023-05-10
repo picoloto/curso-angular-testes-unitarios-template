@@ -71,4 +71,19 @@ describe('HttpService', () => {
     expect(request.request.method).toBe('GET');
     expect(request.request.url).toBe(usersUrl);
   });
+
+  it('Deve fazer requisição POST para cadastrar usuário', () => {
+    const user = { name: 'Leandro' };
+
+    service.postUser(user).subscribe((res) => {
+      expect(res).toBe(user);
+    });
+
+    const request = httpTestingController.expectOne(usersUrl);
+
+    expect(request.request.method).toBe('POST');
+    expect(request.request.url).toBe(usersUrl);
+
+    request.flush(user);
+  });
 });
