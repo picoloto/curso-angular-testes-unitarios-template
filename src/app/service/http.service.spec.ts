@@ -119,4 +119,22 @@ describe('HttpService', () => {
 
     request.flush(null);
   });
+
+  it('Deve conter headers na requisição', () => {
+    const token = 'Bearer wa45a5a45a5a5a4a5a4a5a55a5a5a5a5a5a5a';
+    const response = [{ name: 'Leandro' }, { name: 'Leandro 2' }];
+    service.getUserWithHeaders().subscribe((res) => {
+      expect(res).toBe(response);
+    });
+
+    const request = httpTestingController.expectOne(usersUrl);
+
+    expect(request.request.headers.has('content-type')).toEqual(true);
+    expect(request.request.headers.has('Authorization')).toEqual(true);
+    expect(request.request.headers.get('Authorization')).toEqual(token);
+    expect(request.request.method).toBe('GET');
+    expect(request.request.url).toBe(usersUrl);
+
+    request.flush(response);
+  });
 });
