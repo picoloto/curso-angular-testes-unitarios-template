@@ -54,6 +54,12 @@ describe('MatchersJasmineComponent', () => {
     // expect(true).toBeTrue() -> O toBeFalse considera o valor bool
   })
 
+  it('Deve testar o uso do matcher not', () => {
+    expect(false).not.toBeTrue();
+    // expect(true).not.toBeTrue() -> O not é igual ao ! de uma comparação bool
+  })
+
+
 });
 
 
