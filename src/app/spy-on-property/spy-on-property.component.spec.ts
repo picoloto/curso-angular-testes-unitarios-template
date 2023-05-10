@@ -21,4 +21,11 @@ describe('SpyOnPropertyComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('Deve retornar a mensagem correta', () => {
+    const mensagem = 'Olá, Mundo!';
+    spyOnProperty(component, 'message', 'get').and.returnValue(mensagem);
+
+    expect(component.message).toEqual(mensagem);
+  });
+
 });
