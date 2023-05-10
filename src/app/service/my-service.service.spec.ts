@@ -4,15 +4,29 @@ import { of } from 'rxjs';
 
 import { MyServiceService } from './my-service.service';
 
+const RESPONSE = [
+  {
+    'name': 'Leandro',
+    'email': 'leandro@teste.com',
+    'age': 30,
+    'id': 1,
+  },
+  {
+    'name': 'Leandro 2',
+    'email': 'leandro 2@teste.com',
+    'age': 31,
+    'id': 2,
+  }
+];
+
 class MyServiceMock extends MyServiceService {
-  response = [];
   override getUsers() {
-    return of(this.response)
+    return of(RESPONSE)
   }
 
 }
 
-describe('MyServiceService', () => {
+describe('MyServiceMock', () => {
   let service: MyServiceService;
 
   beforeEach(() => {
@@ -30,6 +44,13 @@ describe('MyServiceService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('Deve realizar chamada HTTP', () => {
+    service.getUsers().subscribe(res => {
+      expect(res).toEqual(RESPONSE);
+    })
+
   });
 
 
