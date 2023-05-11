@@ -9,9 +9,8 @@ describe('TestingPipesDirectiveRouteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestingPipesDirectiveRouteComponent, HttpPipe ]
-    })
-    .compileComponents();
+      declarations: [TestingPipesDirectiveRouteComponent, HttpPipe],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TestingPipesDirectiveRouteComponent);
     component = fixture.componentInstance;
